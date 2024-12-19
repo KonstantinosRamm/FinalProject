@@ -3,10 +3,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <ctype.h>
 
 
 /*
-    generate random word that is read from a file              
+   pick a random word from file             
 */
 
 
@@ -29,6 +30,7 @@ int gen_rand_word(char str[buffer_size]){
         //validate that the word is not bigger than the size of the buffer
         if(strlen(word) >= buffer_size-1){
             printf("The word you inserted is to big...\n");
+            printf("Make sure your word does not exceed 64 characters\n");
             exit(EXIT_FAILURE);
         }
         ctr++;
@@ -47,8 +49,8 @@ int gen_rand_word(char str[buffer_size]){
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*
-    initialize the usr string 
-    */
+    initialize the usr string with first and last letter of the word
+*/
 void init_str(const char src[buffer_size],char user[buffer_size]){
     int i = 0;
     for(i = 0; i < strlen(src);i++){
@@ -59,7 +61,8 @@ void init_str(const char src[buffer_size],char user[buffer_size]){
             user[i]='_';
         }
     }
-    user[i]='\0';//place the terminating character in the end
+    //insert null terminating char
+    user[i]='\0';
 }
 
 
@@ -85,19 +88,22 @@ void input(const char src[buffer_size],char user[buffer_size],int *stage){
 
         //make a loop to find the correct potition on the array
         for(int i = 0; i < strlen(src);i++){
-            if(c==src[i]){
+            //tolower to add case insensitivity in character comparisons 
+            if(tolower(c)==tolower(src[i])){
                 user[i]=c;
                 correct=1;
                 
                 
             }
         }
-        //if the current character didnt match with any of the src string then the 
-        if(correct==0){
+        //if users input didnt match any string character then increment stage(reduce life)
+        if(!correct){
             (*stage)++;
+            //add character to already tried characters
+
             
         }
-        //if the correct word is found break the itteration even if more characters inside the input stream
+        //check if the characters entered by the user match the word 
         if (strcmp(src,user)==0){
             return;
         }
@@ -117,5 +123,7 @@ void clr_scr(){
         printf("\n");
     }
 }
+
+
 
 

@@ -9,6 +9,18 @@ void start_game();
 
 
 int main(){
+
+    start_game();
+    return 0;
+}
+
+
+
+
+
+
+
+void start_game(){
     int stage=stage_one;
     char word[buffer_size]="";//buffer for the selected word
     gen_rand_word(word);
@@ -35,6 +47,4 @@ int main(){
         }
 
     }
-
-    return 0;
 }
