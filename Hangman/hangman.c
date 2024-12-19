@@ -77,15 +77,17 @@ void init_str(const char src[buffer_size],char user[buffer_size]){
     of stage increases which is used to count the remaing attempts to find the word
 */
 
-void input(const char src[buffer_size],char user[buffer_size],int *stage){
+void input(const char src[buffer_size],char user[buffer_size],int already_tried_by_user[alphabet_letters],int *stage){
     char c;
     int correct = 0;//determine if correct letter found or not
     printf("\nEnter a character or characters : ");
     //scanf("%c",&c);
     while((c = getchar()) != '\n' && c != EOF){
     correct=0;
-    
-
+        //ignore non alphabetical charaacters
+        if (!isalpha(c)){
+            continue;
+        }
         //make a loop to find the correct potition on the array
         for(int i = 0; i < strlen(src);i++){
             //tolower to add case insensitivity in character comparisons 
@@ -98,11 +100,17 @@ void input(const char src[buffer_size],char user[buffer_size],int *stage){
         }
         //if users input didnt match any string character then increment stage(reduce life)
         if(!correct){
-            (*stage)++;
-            //add character to already tried characters
-
-            
+                //check if character entered before
+                if(!already_tried(c,already_tried_by_user)){
+                    (*stage)++;
+                }
         }
+
+
+        //insert character in already tried
+        already_tried_by_user[tolower(c)-'a'] = 1;
+
+        
         //check if the characters entered by the user match the word 
         if (strcmp(src,user)==0){
             return;
@@ -122,6 +130,25 @@ void clr_scr(){
     for(int i = 0; i < screen;i++){
         printf("\n");
     }
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//check if alreaty tried characters
+int already_tried(char ch,int already_tried_by_user[alphabet_letters]){  
+    return already_tried_by_user[tolower(ch)-'a'] == 1;
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//print already tried characters
+void print_already_tried(int already_tried_by_user[alphabet_letters]){
+    printf("\nalready tried characters: ");
+    for(int i = 0; i < alphabet_letters; i++){
+        //encode back to character
+        if(already_tried_by_user[i]){
+            printf("%c",i+'a');
+        }
+    }
+    printf("\n");
 }
 
 

@@ -25,12 +25,17 @@ void start_game(){
     char word[buffer_size]="";//buffer for the selected word
     gen_rand_word(word);
     char usr[strlen(word)];//store the word that the user found
+    int tried[alphabet_letters]; //store tried letters
+    for(int i = 0; i < alphabet_letters; i++){
+        tried[i]= 0;//init to zero(not tried before)
+    }
     init_str(word,usr);
     while(1){
         clr_scr();//clear screen
         check_stage(stage);//print the ascii 
         printf("\n\n%s",usr);//print the word with the entered letters
-        input(word,usr,&stage);
+        print_already_tried(tried);
+        input(word,usr,tried,&stage);
 
         if(strcmp(word,usr)==0){//if user finds the correct word
             clr_scr();
