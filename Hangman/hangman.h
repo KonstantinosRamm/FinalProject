@@ -4,7 +4,6 @@
 
 #define buffer_size 64 
 #define alphabet_letters 26
-#define screen 80
 
 
 

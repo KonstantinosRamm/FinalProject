@@ -12,7 +12,6 @@ enum state{
     last_chance,
     game_over
 };
-
-void check_stage(int state);//print current state with ascii
-
+//determine the correct ascii to print based on the current state of the game
+void check_stage(int state);
 #endif //ASCII_H

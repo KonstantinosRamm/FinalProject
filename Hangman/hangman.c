@@ -35,13 +35,17 @@ int gen_rand_word(char str[buffer_size]){
         }
         ctr++;
     }
-    rewind(file);//place the cursor at the start again
-        potition =+ rand() %ctr;//choose a random index to read the word
+    //place the cursor a the beggining of the file and read random word
+    rewind(file);
+        potition =rand() %ctr;
 
+    //pick word based on random index
     for(i = 0; i <= potition; i++){
         fscanf(file,"%s",word);
     }
     strncpy(str, word, buffer_size);
+    //ensure string is null terminated
+    str[buffer_size-1] = '\0';
 
     fclose(file);
     return 1;
@@ -49,11 +53,12 @@ int gen_rand_word(char str[buffer_size]){
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*
-    initialize the usr string with first and last letter of the word
+    initialize the usr string with first and last letter of the word (as a hint)
 */
 void init_str(const char src[buffer_size],char user[buffer_size]){
     int i = 0;
-    for(i = 0; i < strlen(src);i++){
+    int len = strlen(src);
+    for(i = 0; i < len;i++){
         if(i==0 || i == strlen(src)-1){
             user[i]=src[i];
         }
@@ -61,7 +66,7 @@ void init_str(const char src[buffer_size],char user[buffer_size]){
             user[i]='_';
         }
     }
-    //insert null terminating char
+    //add terminating char to user string
     user[i]='\0';
 }
 
@@ -69,12 +74,7 @@ void init_str(const char src[buffer_size],char user[buffer_size]){
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*
-    this function takes 2 string arguments. the first is the word to be found which is set as a constant. 
-    the second is the string in which the user enters letters ... In each round the user enters a character
-     or characters and an iterration starts for the current character from the input stream and the src .
-    in case the character is found at least once inside the string then the corrrect variable evaluates to 
-    true.by default the correct variable is false and if its still false after the end of the loop the value
-    of stage increases which is used to count the remaing attempts to find the word
+    Processes user input for the Hangman game, including validation and state updates.
 */
 
 void input(const char src[buffer_size],char user[buffer_size],int already_tried_by_user[alphabet_letters],int *stage){
@@ -98,7 +98,7 @@ void input(const char src[buffer_size],char user[buffer_size],int already_tried_
                 
             }
         }
-        //if users input didnt match any string character then increment stage(reduce life)
+        //if users input didnt match any character then increment stage(reduce life)
         if(!correct){
                 //check if character entered before
                 if(!already_tried(c,already_tried_by_user)){
@@ -107,11 +107,11 @@ void input(const char src[buffer_size],char user[buffer_size],int already_tried_
         }
 
 
-        //insert character in already tried
+        //update tried characters
         already_tried_by_user[tolower(c)-'a'] = 1;
 
         
-        //check if the characters entered by the user match the word 
+        //check if the characters entered by the user match the word (for multiple characters at once)
         if (strcmp(src,user)==0){
             return;
         }
@@ -123,17 +123,16 @@ void input(const char src[buffer_size],char user[buffer_size],int already_tried_
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*
-        make a crlear screen function that acts like clearing the screen.In reality it prints new line characters in the screen
+        clear the screen and redraw the the new state of the game
+        Since i decided to make the game linux based i can use clear command
 */
 
 void clr_scr(){
-    for(int i = 0; i < screen;i++){
-        printf("\n");
-    }
+    system("clear");   
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//check if alreaty tried characters
+//check characters already tried
 int already_tried(char ch,int already_tried_by_user[alphabet_letters]){  
     return already_tried_by_user[tolower(ch)-'a'] == 1;
 }
