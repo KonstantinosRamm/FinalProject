@@ -53,10 +53,4 @@ careful—incorrect guesses will move you closer to the hanger.
 The game ensures that any attempts to abuse the input prompts are handled gracefully, maintaining the integrity
  of the game experience.
 
-Upcoming Feature: Colors
-
-
-
-
-
-                                                                                                            
+Upcoming Feature: Colors                                                                                                         

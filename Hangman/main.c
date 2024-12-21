@@ -1,11 +1,13 @@
 #include "hangman.h"
 #include "ascii.h"
-#include "menu.h"
+#include "validation.h"
 #include "info.h"
+#include "ansi.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
+
 
 
 /*  
@@ -13,12 +15,21 @@
     but it is separated to enhance clarity and simplify potential expansions to the game 
 */
 void start_game();
+void color_options();
 
 
 int main(){
 
     //start hangman game
     while(1){
+        system("clear");
+        printf("----------Welcome to Hangman game!----------\n");
+        printf("Choose one of the options below\n");
+        printf("1) INFO\n");
+        printf("2) PLAY\n");
+        printf("3) OPTIONS\n");
+        printf("4) EXIT\n");
+        printf("Option: ");
         int option = get_user_opt();
         switch(option){
 
@@ -36,6 +47,9 @@ int main(){
 
             //options
             case options:
+                color_options();
+                clr_scr();
+
                 break;
 
             case quit:
@@ -44,7 +58,7 @@ int main(){
                 
             //handle exit option and invalid inputs
             default:
-                exit(-1);//exit with another error code 
+                exit(-1);//exit with error code 
                 system("exit");
         }
         printf("\n");
@@ -99,20 +113,47 @@ void start_game(){
             clr_scr();
             check_stage(win);
             printf("\nThe word was: %s\n\n",word);
-            sleep(5);
+            //wait for 3 seconds and return user to main menu
+            sleep(3);
             clr_scr();
-            break;
+            return;
         }
         //game over 
         if(stage >= game_over){
             clr_scr();//clear screen
             check_stage(game_over);
-            //wait for 5 seconds and return user to main menu
-            sleep(5);
+            printf("\nThe word was: %s\n\n",word);
+            //wait for 3 seconds and return user to main menu
+            sleep(3);
             clr_scr();
-            break;
+            return;
             
         }
 
+    }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+void color_options(){
+    clr_scr();
+    printf("Change colors:\n");
+    printf("1)Foreground\n");
+    printf("2)Background\n");
+    printf("3)Revert Colors\n");
+    printf("4)Cancel\n");
+    printf("Option: ");
+    int color_option = get_user_opt();
+    switch (color_option){
+        //change foreground color
+        case 1:
+            clr_scr();
+            change_FOREGROUND();
+        break;
+        case 2:
+        break;
+        case 3:
+        break;
+        default:
+        return;
     }
 }

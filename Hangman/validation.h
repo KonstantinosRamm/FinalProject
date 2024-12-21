@@ -1,5 +1,5 @@
-#ifndef MENU_H
-#define MENU_H
+#ifndef VALIDATION_H
+#define VALIDATION_H
 #define input_buffer 10
 
 enum options{
@@ -9,7 +9,7 @@ enum options{
     quit
 };
 
-//create a cli menu to handle the game and the available options 
+//for user validation 
 int get_user_opt();
 
-#endif //MENU_H
+#endif //VALIDATION_H
