@@ -1,11 +1,12 @@
 #include "hangman.h"
 #include "ascii.h"
 #include "menu.h"
+#include "info.h"
 #include <stdio.h>
 #include <string.h>
-
 #include <stdlib.h>
-#include <unistd.h> //for get opt function
+#include <unistd.h>
+
 
 /*  
     Starts the Hangman game and handles the game logic.This code could be placed inside the main function instead of a function, 
@@ -20,24 +21,33 @@ int main(){
     while(1){
         int option = get_user_opt();
         switch(option){
+
             //game information
             case info:
+                clr_scr();
+                about_game();
                 break;
+
             //initiate new game
             case play_game:
+
                 start_game();
                 break;
-            //add word to the dictionary 
-            case add_word:
+
+            //options
+            case options:
                 break;
+
             case quit:
                 exit(0);
                 break;
+                
             //handle exit option and invalid inputs
             default:
                 exit(-1);//exit with another error code 
                 system("exit");
-        }      
+        }
+        printf("\n");
     }
 
     

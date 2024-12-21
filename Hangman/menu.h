@@ -5,7 +5,7 @@
 enum options{
     info = 1,
     play_game,
-    add_word,
+    options,
     quit
 };
 
