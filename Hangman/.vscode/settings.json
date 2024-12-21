@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "info.h": "c",
+        "stdio.h": "c",
+        "ansi.h": "c",
+        "validation.h": "c",
+        "stdlib.h": "c",
+        "unistd.h": "c",
+        "string.h": "c"
+    }
+}

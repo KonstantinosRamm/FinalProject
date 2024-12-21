@@ -1,8 +1,8 @@
-#include "hangman.h"
-#include "ascii.h"
-#include "validation.h"
-#include "info.h"
-#include "ansi.h"
+#include "include/hangman.h"
+#include "include/ascii.h"
+#include "include/validation.h"
+#include "include/info.h"
+#include "include/ansi.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -143,16 +143,17 @@ void color_options(){
     printf("4)Cancel\n");
     printf("Option: ");
     int color_option = get_user_opt();
+    clr_scr();
+
     switch (color_option){
         //change foreground color
         case 1:
-            clr_scr();
             change_FOREGROUND();
         break;
         case 2:
+            change_BACKGROUND();
         break;
         case 3:
-            clr_scr();
             revert();
         break;
         default:

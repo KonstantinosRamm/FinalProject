@@ -53,4 +53,7 @@ careful—incorrect guesses will move you closer to the hanger.
 The game ensures that any attempts to abuse the input prompts are handled gracefully, maintaining the integrity
  of the game experience.
 
-Upcoming Feature: Colors                                                                                                         
+* You have the option to change both the foreground and background colors:
+The colors displayed might not exactly match the standard colors you expect. This variation can be due to your terminal's
+default settings,themes, and color profiles.For example, what is designated as "black" might appear as a more greyish color
+depending on your terminal's configuration.                                                                                              

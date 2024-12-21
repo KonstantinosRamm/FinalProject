@@ -65,4 +65,62 @@ void change_FOREGROUND(){
 void revert(){
     printf("\033[0m");
 }
+
+
+void change_BACKGROUND(){
+    int option;
+    printf("Pick one of the colors below: \n");
+    printf("1)Black: \n");
+    printf("2)Red: \n");
+    printf("3)Green: \n");
+    printf("4)Yellow: \n");
+    printf("5)Blue: \n");
+    printf("6)Cyan: \n");
+    printf("7)White: \n");   
+    printf("8)Exit \n");
+    printf("Option: ");      
+    option = get_user_opt();
+
+    switch (option){
+        //black text
+        case 1:
+        printf("\033[40m");
+        break;
+
+        //Red text
+        case 2:
+        printf("\033[41m");
+        break;
+
+        //Green text
+        case 3:
+        printf("\033[42m");
+        break;
+
+        //Yellow text
+        case 4:
+        printf("\033[43m");
+        break;
+
+        //blue text
+        case 5:
+        printf("\033[44m");
+        break;
+
+        //Cyan text
+        case 6:
+        printf("\033[46m");
+        break;
+
+        //white text
+        case 7:
+        printf("\033[47m");
+        break;
+
+        //cancel
+        default:
+        return;
+    }
+      
+}
     
