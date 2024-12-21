@@ -5,5 +5,7 @@
 void change_FOREGROUND();
 //change background color
 void change_BACKGROUND();
+//revert colors
+void revert();
 
 #endif //ANSI_H

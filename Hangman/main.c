@@ -152,6 +152,8 @@ void color_options(){
         case 2:
         break;
         case 3:
+            clr_scr();
+            revert();
         break;
         default:
         return;

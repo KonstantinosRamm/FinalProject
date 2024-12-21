@@ -61,4 +61,8 @@ void change_FOREGROUND(){
       
 }
 
+//revert all colors 
+void revert(){
+    printf("\033[0m");
+}
     
