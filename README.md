@@ -28,6 +28,9 @@ been guessed before are added, while incorrect ones, if already guessed, are ign
 - `git`
 
 ## Follow the steps below to download and compile
+1. First open your terminal and use `cd` command to navigate to the directory where you want your project to be downloaded
+2. run : `git clone https://github.com/KonstantinosRamm/FinalProject.git`
+3. 
 
 
 
