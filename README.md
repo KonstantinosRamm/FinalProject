@@ -38,6 +38,10 @@ been guessed before are added, while incorrect ones, if already guessed, are ign
 1. `cd` inside hangman directory
 2. `make clean` to remove the executable
 
+## Adding more words
+The game comes with 127 words, but you can add more by simply inserting the words into the file `words.txt`, which is located in the folder: `FinalProject/Hangman/`.
+To add a word, all you need to do is open the file and write the word at the end of the file or next to any existing word, making sure to insert a space character first.
+
 
 
 
