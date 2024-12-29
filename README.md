@@ -23,7 +23,9 @@ The program consists of about 700 lines of code .Lastly, the program was designe
 been guessed before are added, while incorrect ones, if already guessed, are ignored; otherwise, they progress the hangman stage.
 
 ## Requirements
-- GCC (GNU Compiler collection)
+- `gcc`
+- `make`
+- `git`
 
 
 
