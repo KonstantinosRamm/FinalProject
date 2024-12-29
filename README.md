@@ -32,7 +32,11 @@ been guessed before are added, while incorrect ones, if already guessed, are ign
 2. `git clone https://github.com/KonstantinosRamm/FinalProject.git`
 3. `cd FinalProject/Hangman`
 4. `make` or `make hangman`
-5. run the game with: `./hangman`
+5.  run the game with: `./hangman`
+
+## Uninstall
+1. `cd` inside hangman directory
+2. `make clean` to remove the executable
 
 
 
