@@ -11,5 +11,17 @@ This is the final project for CS50.This project is a simple implementation of th
 The program consists of about 700 lines of code .Lastly, the program was designed for use exclusively on Linux-based systems as it uses system calls that may not be available on other systems.
 
 
+## Features
+- Command-line interface for gameplay.
+- Randomly selects words from a predefined list.
+- Displays the current state of the hangman and the word being guessed.
+- **Add New Words**: Users can add new words by inserting them into a specific file.
+- **Color Options**: Provides options for setting foreground and background colors using ANSI escape codes.
+- **Security and Validation**: Extensive validation checks to prevent malicious use and improve user experience.
+- **ASCII Graphics**: Utilizes simple ASCII graphics for visual representation.
+- **Multiple Characters Handling**: Handles multiple character inputs by checking each one individually. Correct characters that haven't 
+been guessed before are added, while incorrect ones, if already guessed, are ignored; otherwise, they progress the hangman stage.
+
+
 
 
