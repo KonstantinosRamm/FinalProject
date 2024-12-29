@@ -31,12 +31,16 @@ been guessed before are added, while incorrect ones, if already guessed, are ign
 1. First open your terminal and use `cd` command to navigate to the directory where you want your project to be downloaded
 2. ```bash
 git clone https://github.com/KonstantinosRamm/FinalProject.git
+   ```
 3. ```bash
 cd FinalProject/Hangman
+   ```
 4. ```bash
 make or make hangman
+   ```
 5. ```bash
 run the game with: ./hangman
+   ```
 
 ## Uninstall
 1. `cd` inside hangman directory
