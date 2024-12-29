@@ -151,9 +151,11 @@ void color_options(){
             change_FOREGROUND();
         break;
         case 2:
+        //change background color
             change_BACKGROUND();
         break;
         case 3:
+        //revert colors to default
             revert();
         break;
         default:
