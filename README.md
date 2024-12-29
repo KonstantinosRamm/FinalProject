@@ -27,6 +27,10 @@ been guessed before are added, while incorrect ones, if already guessed, are ign
 - `make`
 - `git`
 
+## Follow the steps below to download and compile
+
+
+
 
 
 
