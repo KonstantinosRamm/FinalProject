@@ -1,7 +1,10 @@
 # Hangman Project
 
 ## Description
-This is a simple Hangman game implemented in C with enhanced functionality such as command-line options.
+This is the final project for CS50.This project is a simple implementation of the classic Hangman game written in C. The objective of the game is to guess the hidden word by suggesting letters within a certain number of guesses.
+While the game is a Hangman game that selects a random word, my primary goal and challenge was to be as meticulous as possible to ensure that users cannot misuse it maliciously while simultaneously improving the user experience. 
+The program is a game written in C, based on terminal interface, and it utilizes simple ASCII graphics.
+
 
 ## License
 This project is licensed under the terms of the Custom License.
@@ -10,5 +13,3 @@ This project is licensed under the terms of the Custom License.
 - You are free to use, modify, and distribute this code for personal and commercial purposes.
 - **Copying, using, or submitting this code for academic purposes is strictly prohibited**
 
-
-##usage
