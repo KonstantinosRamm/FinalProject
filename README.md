@@ -1,14 +1,10 @@
 # Hangman Project
-## License
-This project is licensed under the terms of the Custom License.
-
-### License Terms
-- You are free to use, modify, and distribute this code for personal and commercial purposes.
-- **Copying, using, or submitting this code for academic purposes is strictly prohibited**
-  
-## Description
+#### Video Demo: <  >
+#### Description: 
 This is the final project for CS50.This project is a simple implementation of the classic Hangman game written in C and it utilizes simple ASCII graphics. The objective of the game is to guess the hidden word by suggesting letters within a certain number of guesses.While the game is a Hangman game that selects a random word, my primary goal and challenge was to be as meticulous as possible to ensure that users cannot misuse it maliciously while simultaneously improving the user experience. 
 The program consists of about 700 lines of code .Lastly, the program was designed for use exclusively on Linux-based systems as it uses system calls that may not be available on other systems.
+
+
 
 
 ## Features
@@ -45,8 +41,17 @@ make hangman
 2. `make clean` to remove the executable
 
 ## Adding more words
-The game comes with 127 words, but you can add more by simply inserting the words into the file `words.txt`, which is located in the folder: `FinalProject/Hangman/`.
+The game comes with 127 words, but you can add more by simply inserting the words into the file `words.txt`, which is located in the directory: `FinalProject/Hangman/`.
 To add a word, all you need to do is open the file and write the word at the end of the file or next to any existing word, making sure to insert a space character first.
+
+
+## License
+This project is licensed under the terms of the Custom License.
+
+### License Terms
+- You are free to use, modify, and distribute this code for personal and commercial purposes.
+- **Copying, using, or submitting this code for academic purposes is strictly prohibited**
+
 
 
 
