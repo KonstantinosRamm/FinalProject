@@ -34,7 +34,7 @@ git clone https://github.com/KonstantinosRamm/FinalProject.git
 
 cd FinalProject/Hangman
 
-make or make hangman
+make hangman
 
 ./hangman
 ```
