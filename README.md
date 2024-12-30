@@ -44,6 +44,11 @@ make hangman
 The game comes with 127 words, but you can add more by simply inserting the words into the file `words.txt`, which is located in the directory: `FinalProject/Hangman/`.
 To add a word, all you need to do is open the file and write the word at the end of the file or next to any existing word, making sure to insert a space character first.
 
+## Color Options
+I have added the feature to change the foreground and background colors of the game. This is done within the program by selecting the options in the menu. It is important 
+to note that the colors may differ slightly from user to user as they are affected by the system theme and the terminal theme. For example choosing the color green may not be 
+exactly green but a lighter shade.another example is black which in some terminals appears as gray (as in mine with the specific theme I use).
+
 
 ## License
 This project is licensed under the terms of the Custom License.
