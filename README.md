@@ -51,6 +51,7 @@ This project is licensed under the terms of the Custom License.
 ### License Terms
 - You are free to use, modify, and distribute this code for personal and commercial purposes.
 - **Copying, using, or submitting this code for academic purposes is strictly prohibited**
+- [CS50 academic honesty:](https://cs50.harvard.edu/x/2023/honesty/)
 
 
 
