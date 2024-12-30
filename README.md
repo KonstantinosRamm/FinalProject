@@ -30,9 +30,12 @@ been guessed before are added, while incorrect ones, if already guessed, are ign
 ## Follow the steps below to download and compile
 First open your terminal and use `cd` command to navigate to the directory where you want your project to be downloaded
 ```bash
-git clone https://github.com/KonstantinosRamm/FinalProject.git 
+git clone https://github.com/KonstantinosRamm/FinalProject.git
+
 cd FinalProject/Hangman
+
 make or make hangman
+
 ./hangman
 ```
 
