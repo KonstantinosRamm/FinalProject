@@ -1,5 +1,5 @@
 # Hangman Project
-#### Video Demo: <  >
+#### Video Demo: [Hangman](https://youtu.be/FE3ir4s-JDI)
 #### Description: 
 This is the final project for CS50.This project is a simple implementation of the classic Hangman game written in C and it utilizes simple ASCII graphics. The objective of the game is to guess the hidden word by suggesting letters within a certain number of guesses.While the game is a Hangman game that selects a random word, my primary goal and challenge was to be as meticulous as possible to ensure that users cannot misuse it maliciously while simultaneously improving the user experience. 
 The program consists of about 700 lines of code .Lastly, the program was designed for use exclusively on Linux-based systems as it uses system calls that may not be available on other systems.
